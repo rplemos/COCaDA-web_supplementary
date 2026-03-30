@@ -1,7 +1,7 @@
 #!/bin/bash
 today=$(date +"%Y-%m-%d")
 
-for folder in /hd/new/outputs_temp/outputs_${today}/*; do
+for folder in /hd/cocada-web_update/outputs_temp/outputs_${today}/*; do
 
 	foldername=$(basename "$folder")
 	first_char=${foldername:0:1}

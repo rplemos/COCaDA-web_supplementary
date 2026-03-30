@@ -18,7 +18,7 @@ def get_existing_pdb_files():
     return pdb_files
 
 # Get all current PDB IDs from the previously fetched file
-with open(f"/hd/new/new_ids/new_ids_{today}.txt", "r") as f:
+with open(f"/hd/cocada-web_update/new_ids/new_ids_{today}.txt", "r") as f:
     current_pdb_ids = set(line.strip() for line in f)
 
 # Get all existing PDB files in your local directory
@@ -28,7 +28,7 @@ existing_pdb_files = get_existing_pdb_files()
 missing_pdb_ids = current_pdb_ids - existing_pdb_files
 
 # Save missing PDB IDs to a file for downloading
-with open(f"/hd/new/missing_ids/missing_ids_{today}.txt", "a") as f:
+with open(f"/hd/cocada-web_update/missing_ids/missing_ids_{today}.txt", "a") as f:
     for pdb_id in missing_pdb_ids:
         f.write(f"{pdb_id}\n")
 

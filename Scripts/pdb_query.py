@@ -5,11 +5,13 @@ from datetime import date, timedelta, datetime
 import sys
 
 url_search_api = 'https://search.rcsb.org/rcsbsearch/v2/query?json='
+#url_search_api = 'http://128.6.159.193/rcsbsearch/v2/query?json='
+
 error_date = "1970-01-01"
 
 # Read the last run date or set to a default if the file doesn't exist
 try:
-    with open('/hd/new/last_run_dates.txt', 'r') as f:
+    with open('/hd/cocada-web_update/last_run_dates.txt', 'r') as f:
         lines = f.readlines()
         if lines:
             last_run_date = lines[-1].strip()
@@ -43,8 +45,8 @@ query = {
                     "attribute": "rcsb_accession_info.initial_release_date",
                     "operator": "greater_or_equal",
                     #"value": "1970-01-01"
-                    "value": "2025-01-01"
-                    #"value": last_run_date
+                    #"value": "2025-01-01"
+                    "value": last_run_date
                     #"value": date_check
                 }
             },
@@ -106,12 +108,12 @@ def fetch_pdb_ids(start=0, rows=1000):
 pdb_ids_new = fetch_pdb_ids()
 
 # Save the new PDB IDs to a file
-with open(f"/hd/new/new_ids/new_ids_{today}.txt", "a") as f:
+with open(f"/hd/cocada-web_update/new_ids/new_ids_{today}.txt", "a") as f:
     for pdb_id in pdb_ids_new:
         f.write(f"{pdb_id}\n")
 
 # Update the last run date
-with open('/hd/new/last_run_dates.txt', 'a') as f:
+with open('/hd/cocada-web_update/last_run_dates.txt', 'a') as f:
     if today != last_run_date: 
         f.write(f"{today}\n")
 

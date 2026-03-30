@@ -3,7 +3,7 @@
 today=$(date +"%Y-%m-%d")
 #today="2024-12-08"
 
-for file in /hd/new/new_files/new_files_${today}/*; do
+for file in /hd/cocada-web_update/new_files/new_files_${today}/*; do
     #echo "$file"
     # Get the filename without the path
     filename=$(basename "$file")
