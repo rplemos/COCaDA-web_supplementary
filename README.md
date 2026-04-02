@@ -11,7 +11,11 @@ For the Web Server source code, please visit [COCaDA-web](https://github.com/LBS
 
 - [`database_weekly_update/`](database_weekly_update/): Contains the scripts for the weekly database update of the Web Server. All scripts are tightly tied to this specific case, and should not be used separately. The workflow is detailed in 
 the image below, and in the main text of the paper.
-- [`case_studies`](case_studies/): 
+- [`use_case_examples`](use_case_examples/): Contains the raw files used in the two use case examples described in the paper. 
+    - 1F41-, 2G2N-, 8UW4-assembly1.cif: Structures of the three experimental proteins used. Only the Biological Assembly 1 for each one was considered (homotetramer);
+    - 1F41-, 2G2N-, 8UW4-contacts.csv: Full list of contacts for each protein, identified using COCaDA-web;
+    - SupplementaryTableS2.xlsx: Formatted table containing the full list of contacts for each protein (same as CSV files). Contacts discussed in the use case examples are highlighted;
+    - use_cases_mapping.pse: PyMOL session used to generate Supplementary Figures S5 and S6.
 
 <img width="821" height="553" alt="Screenshot 2026-03-30 at 10 23 39 am" src="https://github.com/user-attachments/assets/22cc0c81-c6ab-45a2-83d5-9d01f84aba64" alt="workflow"/>
 
